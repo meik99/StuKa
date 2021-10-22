@@ -1,4 +1,4 @@
-package com.rynkbit.jku.stuka
+package com.rynkbit.jku.stuka.identity
 
 import android.content.Context
 import androidx.security.identity.IdentityCredentialStore

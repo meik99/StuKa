@@ -30,11 +30,10 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/editFirstname"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:ems="10"
         android:hint="@string/firstname"
@@ -51,14 +50,13 @@
         android:layout_marginTop="8dp"
         android:text="@string/lastname"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintTop_toBottomOf="@+id/editFirstname" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/editLastname"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:ems="10"
         android:hint="@string/lastname"
@@ -75,14 +73,13 @@
         android:layout_marginTop="8dp"
         android:text="@string/birthdate"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+        app:layout_constraintTop_toBottomOf="@+id/editLastname" />
 
     <EditText
-        android:id="@+id/editTextDate"
+        android:id="@+id/editBirthdate"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:ems="10"
         android:hint="@string/birthdate"
@@ -99,14 +96,13 @@
         android:layout_marginTop="32dp"
         android:text="@string/matriculation_number"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextDate" />
+        app:layout_constraintTop_toBottomOf="@+id/editBirthdate" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName3"
+        android:id="@+id/editMatriculationNumber"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:ems="10"
         android:hint="@string/matriculation_number"
@@ -123,14 +119,13 @@
         android:layout_marginTop="8dp"
         android:text="@string/study_code"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3" />
+        app:layout_constraintTop_toBottomOf="@+id/editMatriculationNumber" />
 
     <EditText
-        android:id="@+id/editTextNumber"
+        android:id="@+id/editStudyCode"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:ems="10"
         android:hint="@string/study_code"
