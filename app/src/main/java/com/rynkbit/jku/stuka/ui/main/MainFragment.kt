@@ -8,17 +8,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.findNavController
 import androidx.security.identity.*
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import com.rynkbit.jku.stuka.AgnosticIdentityCredentialStore
 import com.rynkbit.jku.stuka.R
 import java.lang.Exception
-
-const val CREDENTIAL_NAME = "STUDENT_6"
-const val DOC_TYPE = "CARD"
-const val CREDENTIAL_NAMESPACE = "StuKa"
-const val STUDENT_NAME = "NAME"
-const val IDENTITY_FEATURE = "android.hardware.identity_credential"
 
 class MainFragment : Fragment() {
     private lateinit var viewModel: MainViewModel
@@ -34,6 +30,12 @@ class MainFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
 
+        view.apply {
+            findViewById<FloatingActionButton>(R.id.fabEditData)
+                .setOnClickListener {
+                    findNavController().navigate(R.id.action_mainFragment_to_editDataFragment)
+                }
+        }
 //        val context = requireContext()
 
 //        // All of the code below was made by trial and error
