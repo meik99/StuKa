@@ -9,5 +9,18 @@
         android:id="@+id/mainFragment"
         android:name="com.rynkbit.jku.stuka.ui.main.MainFragment"
         android:label="main_fragment"
-        tools:layout="@layout/main_fragment" />
+        tools:layout="@layout/main_fragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_editDataFragment"
+            app:destination="@id/editDataFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editDataFragment"
+        android:name="com.rynkbit.jku.stuka.ui.edit.EditDataFragment"
+        android:label="edit_data_fragment"
+        tools:layout="@layout/edit_data_fragment" >
+        <action
+            android:id="@+id/action_editDataFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
 </navigation>

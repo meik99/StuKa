@@ -5,4 +5,6 @@
     <string name="matriculation_number">Matriculation Number</string>
     <string name="birthdate">Birthdate</string>
     <string name="study_code">Study code</string>
+    <string name="unset">Unset</string>
+    <string name="edit_data">Edit data</string>
 </resources>
