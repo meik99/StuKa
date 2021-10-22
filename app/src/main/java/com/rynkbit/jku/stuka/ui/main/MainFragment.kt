@@ -34,49 +34,49 @@ class MainFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
 
-        val context = requireContext()
+//        val context = requireContext()
 
-        // All of the code below was made by trial and error
-        // The documentation only gives minimal insight and the error messages are close to useless
-        val identityStore = AgnosticIdentityCredentialStore(context)
-        val credentials = identityStore.credentialStore.createCredential(CREDENTIAL_NAME, DOC_TYPE)
-
-        // For some reason an access control profile is needed, however
-        // I could not find the reason why or what that does
-        val accessControlProfileId = AccessControlProfileId(1)
-        val accessControlProfile = AccessControlProfile.Builder(accessControlProfileId)
-            .setUserAuthenticationRequired(false)
-            .build()
-
-        val data = PersonalizationData.Builder()
-            .addAccessControlProfile(accessControlProfile)
-            .putEntryString(
-                CREDENTIAL_NAMESPACE,
-                STUDENT_NAME,
-                listOf(accessControlProfileId),
-                "Test Name"
-            )
-            .build()
-
-        try {
-            credentials.personalize(data)
-            val readCredentials = identityStore.credentialStore.getCredentialByName(
-                CREDENTIAL_NAME,
-                IdentityCredentialStore.CIPHERSUITE_ECDHE_HKDF_ECDSA_WITH_AES_256_GCM_SHA256
-            )
-
-            // If no access control profile is created or used
-            // the result data contains all keys, but a null value will be returned
-            val resultData = readCredentials?.getEntries(
-                null,
-                mapOf(Pair(CREDENTIAL_NAMESPACE, listOf(STUDENT_NAME))),
-                null
-            )
-            val status = resultData?.getStatus(CREDENTIAL_NAMESPACE, STUDENT_NAME)
-            val name = resultData?.getEntryString(CREDENTIAL_NAMESPACE, STUDENT_NAME)
-            Snackbar.make(view, "Somehow this worked: $status: $name", Snackbar.LENGTH_SHORT).show()
-        } catch (e: Exception) {
-            Log.e(MainFragment::class.java.simpleName, e.message, e)
-        }
+//        // All of the code below was made by trial and error
+//        // The documentation only gives minimal insight and the error messages are close to useless
+//        val identityStore = AgnosticIdentityCredentialStore(context)
+//        val credentials = identityStore.credentialStore.createCredential(CREDENTIAL_NAME, DOC_TYPE)
+//
+//        // For some reason an access control profile is needed, however
+//        // I could not find the reason why or what that does
+//        val accessControlProfileId = AccessControlProfileId(1)
+//        val accessControlProfile = AccessControlProfile.Builder(accessControlProfileId)
+//            .setUserAuthenticationRequired(false)
+//            .build()
+//
+//        val data = PersonalizationData.Builder()
+//            .addAccessControlProfile(accessControlProfile)
+//            .putEntryString(
+//                CREDENTIAL_NAMESPACE,
+//                STUDENT_NAME,
+//                listOf(accessControlProfileId),
+//                "Test Name"
+//            )
+//            .build()
+//
+//        try {
+//            credentials.personalize(data)
+//            val readCredentials = identityStore.credentialStore.getCredentialByName(
+//                CREDENTIAL_NAME,
+//                IdentityCredentialStore.CIPHERSUITE_ECDHE_HKDF_ECDSA_WITH_AES_256_GCM_SHA256
+//            )
+//
+//            // If no access control profile is created or used
+//            // the result data contains all keys, but a null value will be returned
+//            val resultData = readCredentials?.getEntries(
+//                null,
+//                mapOf(Pair(CREDENTIAL_NAMESPACE, listOf(STUDENT_NAME))),
+//                null
+//            )
+//            val status = resultData?.getStatus(CREDENTIAL_NAMESPACE, STUDENT_NAME)
+//            val name = resultData?.getEntryString(CREDENTIAL_NAMESPACE, STUDENT_NAME)
+//            Snackbar.make(view, "Somehow this worked: $status: $name", Snackbar.LENGTH_SHORT).show()
+//        } catch (e: Exception) {
+//            Log.e(MainFragment::class.java.simpleName, e.message, e)
+//        }
     }
 }

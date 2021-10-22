@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Student Card</string>
+    <string name="firstname">Firstname</string>
+    <string name="lastname">Lastname</string>
+    <string name="matriculation_number">Matriculation Number</string>
+    <string name="birthdate">Birthdate</string>
+    <string name="study_code">Study code</string>
 </resources>
